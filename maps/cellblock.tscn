@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://c3gdo5e1ta603"]
+[gd_scene load_steps=5 format=3 uid="uid://c3gdo5e1ta603"]
 
-[node name="Cellblock" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://t5gsajylibsm" path="res://characters/player.tscn" id="1_gc28x"]
+[ext_resource type="Script" path="res://maps/cellblock.gd" id="1_r7rrj"]
+[ext_resource type="PackedScene" uid="uid://cykrg4tm6vk6f" path="res://objects/table.tscn" id="2_vybxd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta4j4"]
+size = Vector2(1117.75, 941.25)
+
+[node name="Cellblock" type="Area2D"]
+script = ExtResource("1_r7rrj")
+
+[node name="Player" parent="." instance=ExtResource("1_gc28x")]
+position = Vector2(45, -25)
+
+[node name="Node2D" parent="." instance=ExtResource("2_vybxd")]
+position = Vector2(500, 500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(352.125, 407.375)
+shape = SubResource("RectangleShape2D_ta4j4")

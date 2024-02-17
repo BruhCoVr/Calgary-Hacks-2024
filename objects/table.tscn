@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cykrg4tm6vk6f"]
+
+[ext_resource type="Texture2D" uid="uid://cn3ig3yb68wfn" path="res://Sprites/Sprite-table.jpg" id="1_1xpx4"]
+[ext_resource type="Script" path="res://objects/table.gd" id="1_g1ywk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pb8df"]
+radius = 96.1301
+
+[node name="Node2D" type="StaticBody2D"]
+script = ExtResource("1_g1ywk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1xpx4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -3)
+shape = SubResource("CircleShape2D_pb8df")
