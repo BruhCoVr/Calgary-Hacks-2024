@@ -13,7 +13,7 @@ script = ExtResource("1_r7rrj")
 [node name="Player" parent="." instance=ExtResource("1_gc28x")]
 position = Vector2(45, -25)
 
-[node name="Node2D" parent="." instance=ExtResource("2_vybxd")]
+[node name="table" parent="." instance=ExtResource("2_vybxd")]
 position = Vector2(500, 500)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

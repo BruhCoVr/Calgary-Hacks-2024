@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://6pl6lhhnojiy"
+=======
+uid="uid://wqlsqhkvw8ux"
+>>>>>>> fd09611ba9d810970b8529229b500d547a3c03ac
 path="res://.godot/imported/Sprite-table.png-d32805562dcf0ada3cc6a01df55d904f.ctex"
 metadata={
 "vram_texture": false
