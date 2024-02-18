@@ -1,3 +1,38 @@
-[gd_scene format=3 uid="uid://d07nvw3byehas"]
+[gd_scene load_steps=5 format=3 uid="uid://d07nvw3byehas"]
+
+[ext_resource type="Script" path="res://spells/ice.gd" id="1_f30ob"]
+[ext_resource type="Texture2D" uid="uid://bm3jhspx8hqu5" path="res://Sprites/Sprite-iceattack.png" id="2_r2d87"]
+
+[sub_resource type="Animation" id="Animation_08xnc"]
+resource_name = "ice"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yk3wl"]
+_data = {
+"ice": SubResource("Animation_08xnc")
+}
 
 [node name="Ice" type="Node2D"]
+script = ExtResource("1_f30ob")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_r2d87")
+hframes = 3
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_yk3wl")
+}
