@@ -8,6 +8,12 @@ var health = 3
 var player
 var pos = 0
 
+
+func hit():
+	health -= 1
+	if health <= 0:
+		queue_free()
+		
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	call_deferred("actor_setup")
