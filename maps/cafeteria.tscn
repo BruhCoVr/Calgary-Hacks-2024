@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ekkfb36wpdlc"]
+[gd_scene load_steps=7 format=3 uid="uid://dspi4ceixg7up"]
 
 [ext_resource type="Script" path="res://maps/cellblock.gd" id="1_almdm"]
 [ext_resource type="PackedScene" uid="uid://t5gsajylibsm" path="res://characters/player.tscn" id="1_nv5e4"]
 [ext_resource type="Texture2D" uid="uid://b5leyo3t37yi6" path="res://Sprites/Sprite-floor.png" id="2_owtke"]
 [ext_resource type="PackedScene" uid="uid://b01te41i4yyyf" path="res://objects/dining_table.tscn" id="2_taqxq"]
 [ext_resource type="PackedScene" uid="uid://bqrt76h7epauo" path="res://objects/cafeteria_table.tscn" id="3_5wfex"]
-[ext_resource type="PackedScene" path="res://maps/background.tscn" id="6_jqw4y"]
+[ext_resource type="PackedScene" uid="uid://cyexjbmdsxh33" path="res://maps/background.tscn" id="6_jqw4y"]
 
 [node name="cafeteria" type="Area2D"]
 script = ExtResource("1_almdm")

@@ -17,7 +17,7 @@ var health = 3
 func _ready():
 	pass # Replace with function body.
 
-func hit():
+func hitted():
 	health -= 1
 	if health <= 0:
 		queue_free()
@@ -25,6 +25,7 @@ func hit():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	#input
+	
 	var direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * 500
 	move_and_slide()

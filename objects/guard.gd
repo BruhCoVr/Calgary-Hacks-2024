@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var animation = $Sprite2D/AnimationPlayer
-
+signal hitted
 var health = 3
 
 func hit():
@@ -18,10 +18,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	animation.play("enemy")
+	
 
 
-
-
-func _on_area_2d_area_entered(area):
-	if area.is_in_group("player"):
-		area.hit()
