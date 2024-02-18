@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://t5gsajylibsm" path="res://characters/player.tscn" id="1_gc28x"]
 [ext_resource type="Script" path="res://maps/cellblock.gd" id="1_r7rrj"]
 [ext_resource type="PackedScene" uid="uid://cykrg4tm6vk6f" path="res://objects/table.tscn" id="2_vybxd"]
-[ext_resource type="PackedScene" path="res://maps/background.tscn" id="2_y6cgq"]
+[ext_resource type="PackedScene" uid="uid://cyexjbmdsxh33" path="res://maps/background.tscn" id="2_y6cgq"]
 [ext_resource type="PackedScene" uid="uid://bw2b54hg37cpw" path="res://objects/node_2d.tscn" id="3_ixwq0"]
-[ext_resource type="PackedScene" path="res://objects/door.tscn" id="4_3koly"]
+[ext_resource type="PackedScene" uid="uid://dtffik1i666f" path="res://objects/door.tscn" id="4_3koly"]
 [ext_resource type="PackedScene" uid="uid://clavkaxcrmpxp" path="res://objects/guard.tscn" id="4_whvid"]
-[ext_resource type="Texture2D" uid="uid://p7np48noejwu" path="res://Sprites/tile_1.png" id="7_agsjp"]
+[ext_resource type="Texture2D" uid="uid://61yq80rdujwc" path="res://Sprites/tile_1.png" id="7_agsjp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ta4j4"]
 size = Vector2(506, 116)
@@ -16,6 +16,7 @@ size = Vector2(506, 116)
 vertices = PackedVector2Array(321, 7, 1461, 24, 1452, 2399, 354, 2382)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(321, 7, 1461, 24, 1452, 2399, 354, 2382)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Cellblock" type="Area2D"]
 script = ExtResource("1_r7rrj")
