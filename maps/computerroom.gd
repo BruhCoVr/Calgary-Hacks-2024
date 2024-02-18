@@ -39,3 +39,5 @@ func _on_player_lightning(pos, direction):
 	lightning.rotation_degrees =rad_to_deg(direction.angle())+90
 	lightning.direction = direction
 	add_child(lightning)
+
+

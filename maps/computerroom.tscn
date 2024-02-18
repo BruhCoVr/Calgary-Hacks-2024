@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://djhsel33jqgwf"]
+[gd_scene load_steps=7 format=3 uid="uid://djhsel33jqgwf"]
 
 [ext_resource type="Script" path="res://maps/computerroom.gd" id="1_sgj7a"]
 [ext_resource type="PackedScene" uid="uid://t5gsajylibsm" path="res://characters/player.tscn" id="2_1ytn3"]
 [ext_resource type="Texture2D" uid="uid://61yq80rdujwc" path="res://Sprites/tile_1.png" id="2_mus1e"]
 [ext_resource type="PackedScene" uid="uid://cyexjbmdsxh33" path="res://maps/background.tscn" id="4_80y01"]
+[ext_resource type="PackedScene" uid="uid://dpx0ptjv8ka50" path="res://objects/computer.tscn" id="5_qt214"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlupn"]
 
@@ -47,3 +48,13 @@ scale = Vector2(20, 1)
 position = Vector2(1163, 556)
 rotation = 1.5708
 scale = Vector2(20, 1)
+
+[node name="Computer" parent="." instance=ExtResource("5_qt214")]
+position = Vector2(1096, 76)
+
+[connection signal="earth" from="Player" to="." method="_on_player_earth"]
+[connection signal="fire" from="Player" to="." method="_on_player_fire"]
+[connection signal="ice" from="Player" to="." method="_on_player_ice"]
+[connection signal="lightning" from="Player" to="." method="_on_player_lightning"]
+[connection signal="magicmissle" from="Player" to="." method="_on_player_magicmissle"]
+[connection signal="stun" from="Player" to="." method="_on_player_stun"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpx0ptjv8ka50"]
+
+[ext_resource type="Texture2D" uid="uid://b3qj85h43dfgc" path="res://Sprites/Sprite-computer.png" id="1_3sr8h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0v4q"]
+size = Vector2(99, 145)
+
+[node name="Computer" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 16)
+texture = ExtResource("1_3sr8h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 16.5)
+shape = SubResource("RectangleShape2D_q0v4q")

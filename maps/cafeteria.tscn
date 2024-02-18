@@ -6,12 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://b01te41i4yyyf" path="res://objects/dining_table.tscn" id="2_taqxq"]
 [ext_resource type="PackedScene" uid="uid://bqrt76h7epauo" path="res://objects/cafeteria_table.tscn" id="3_5wfex"]
 [ext_resource type="PackedScene" uid="uid://clavkaxcrmpxp" path="res://objects/guard.tscn" id="3_vgg3u"]
-[ext_resource type="PackedScene" path="res://maps/background.tscn" id="6_jqw4y"]
+[ext_resource type="PackedScene" uid="uid://cyexjbmdsxh33" path="res://maps/background.tscn" id="6_jqw4y"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_j7pi5"]
 vertices = PackedVector2Array(321, 7, 1461, 24, 1452, 2399, 854.892, 2389.76, 354, 2382)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(321, 7, 1461, 24, 1452, 2399, 854.892, 2389.76, 354, 2382)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="cafeteria" type="Area2D"]
 script = ExtResource("1_almdm")
@@ -112,8 +113,8 @@ position = Vector2(1152, 933)
 rotation = 1.5708
 scale = Vector2(35, 1)
 
-[connection signal="earth" from="Player2" to="." method="_on_player_earth"]
 [connection signal="earth" from="Player2" to="." method="_on_player_2_earth"]
+[connection signal="earth" from="Player2" to="." method="_on_player_earth"]
 [connection signal="fire" from="Player2" to="." method="_on_player_fire"]
 [connection signal="ice" from="Player2" to="." method="_on_player_ice"]
 [connection signal="lightning" from="Player2" to="." method="_on_player_lightning"]
