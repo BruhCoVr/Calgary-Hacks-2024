@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ekkfb36wpdlc"]
+[gd_scene load_steps=7 format=3 uid="uid://dspi4ceixg7up"]
 
 [ext_resource type="Script" path="res://maps/cellblock.gd" id="1_almdm"]
 [ext_resource type="PackedScene" uid="uid://t5gsajylibsm" path="res://characters/player.tscn" id="1_nv5e4"]
-[ext_resource type="Texture2D" uid="uid://cg6amkyw6xgce" path="res://Sprites/Sprite-floor.png" id="2_owtke"]
-[ext_resource type="PackedScene" uid="uid://b01te41i4yyyf" path="res://objects/dining_table.tscn" id="2_taqxq"]
-[ext_resource type="PackedScene" uid="uid://bqrt76h7epauo" path="res://objects/cafeteria_table.tscn" id="3_5wfex"]
+[ext_resource type="Texture2D" uid="uid://b5leyo3t37yi6" path="res://Sprites/Sprite-floor.png" id="2_owtke"]
+[ext_resource type="PackedScene" path="res://objects/dining_table.tscn" id="2_taqxq"]
+[ext_resource type="PackedScene" path="res://objects/cafeteria_table.tscn" id="3_5wfex"]
+[ext_resource type="PackedScene" uid="uid://cyexjbmdsxh33" path="res://maps/background.tscn" id="6_jqw4y"]
 
 [node name="cafeteria" type="Area2D"]
 script = ExtResource("1_almdm")
@@ -12,7 +13,7 @@ metadata/_edit_horizontal_guides_ = [-866.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_repeat = 2
-position = Vector2(1226, 1106)
+position = Vector2(836, 1363)
 rotation = -1.5708
 scale = Vector2(0.626752, 0.971126)
 texture = ExtResource("2_owtke")
@@ -20,21 +21,23 @@ region_enabled = true
 region_rect = Rect2(1466.54, -51.4202, 6065.47, 2723.43)
 
 [node name="Player" parent="." instance=ExtResource("1_nv5e4")]
+position = Vector2(177, 141)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-2, 4)
 limit_left = -5
 limit_top = -15
-limit_right = 1800
-limit_bottom = 2480
+limit_right = 1150
+limit_bottom = 1850
 position_smoothing_enabled = true
 
 [node name="Table_1" parent="." instance=ExtResource("2_taqxq")]
-position = Vector2(635, 568)
+position = Vector2(325, 547)
 rotation = -3.14159
 scale = Vector2(2, 2)
 
 [node name="Table_3" parent="." instance=ExtResource("2_taqxq")]
-position = Vector2(1125, 1295)
+position = Vector2(838, 1258)
 rotation = -3.14159
 scale = Vector2(2, 2)
 
@@ -44,11 +47,11 @@ rotation = -3.14159
 scale = Vector2(2, 2)
 
 [node name="Table_2" parent="." instance=ExtResource("2_taqxq")]
-position = Vector2(1116, 626)
+position = Vector2(826, 598)
 scale = Vector2(2, 2)
 
 [node name="Table_5" parent="." instance=ExtResource("2_taqxq")]
-position = Vector2(378, 1357)
+position = Vector2(313, 1337)
 scale = Vector2(2, 2)
 
 [node name="Table_6" parent="." instance=ExtResource("2_taqxq")]
@@ -56,8 +59,26 @@ position = Vector2(1642, 1336)
 scale = Vector2(2, 2)
 
 [node name="Node2D" parent="." instance=ExtResource("3_5wfex")]
-position = Vector2(1368, 2010)
+position = Vector2(507, 1796)
 scale = Vector2(2, 2)
+
+[node name="Background" parent="." instance=ExtResource("6_jqw4y")]
+position = Vector2(562, -18)
+scale = Vector2(20, 1)
+
+[node name="Background2" parent="." instance=ExtResource("6_jqw4y")]
+position = Vector2(562, 1868)
+scale = Vector2(20, 1)
+
+[node name="Background3" parent="." instance=ExtResource("6_jqw4y")]
+position = Vector2(2, 926)
+rotation = 1.5708
+scale = Vector2(35, 1)
+
+[node name="Background4" parent="." instance=ExtResource("6_jqw4y")]
+position = Vector2(1152, 933)
+rotation = 1.5708
+scale = Vector2(35, 1)
 
 [connection signal="earth" from="Player" to="." method="_on_player_earth"]
 [connection signal="fire" from="Player" to="." method="_on_player_fire"]

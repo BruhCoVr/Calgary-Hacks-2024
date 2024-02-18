@@ -1,12 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://jdh4wwmbqytw"]
+[gd_scene load_steps=3 format=3 uid="uid://jdh4wwmbqytw"]
 
 [ext_resource type="Texture2D" uid="uid://c71chre3v1hgg" path="res://Sprites/Sprite-guard-Sheet.png" id="1_kndf3"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_m3hvy"]
+radius = 39.0
+
 [node name="Guard" type="CharacterBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
 texture = ExtResource("1_kndf3")
 region_enabled = true
 region_rect = Rect2(0, 0, 80, 80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m3hvy")
