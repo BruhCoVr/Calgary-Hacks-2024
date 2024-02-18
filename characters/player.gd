@@ -12,11 +12,16 @@ var can_spell3: bool = true
 var can_spell4: bool = true
 var can_spell5: bool = true
 var can_spell6: bool = true
+var health = 3
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-
+func hit():
+	health -= 1
+	if health <= 0:
+		queue_free()
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	#input
@@ -76,6 +81,7 @@ func _process(_delta):
 		
 		$fireballreload.start()
 		fire.emit(shooting.global_position, player_direction)
+
 
 
 func _on_timer_timeout():

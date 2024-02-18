@@ -1,0 +1,27 @@
+extends CharacterBody2D
+
+@onready var animation = $Sprite2D/AnimationPlayer
+
+var health = 3
+
+func hit():
+	health -= 1
+	if health <= 0:
+		queue_free()
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	animation.play("enemy")
+
+
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("player"):
+		area.hit()

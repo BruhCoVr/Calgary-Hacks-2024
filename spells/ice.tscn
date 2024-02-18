@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d07nvw3byehas"]
 
 [ext_resource type="Script" path="res://spells/ice.gd" id="1_f30ob"]
-[ext_resource type="Texture2D" uid="uid://dqvwvsh4die2x" path="res://Sprites/Sprite-iceattack.png" id="2_r2d87"]
+[ext_resource type="Texture2D" uid="uid://dymchhhn7xfo8" path="res://Sprites/Sprite-iceattack.png" id="2_r2d87"]
 
 [sub_resource type="Animation" id="Animation_08xnc"]
 resource_name = "ice"

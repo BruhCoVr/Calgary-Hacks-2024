@@ -6,7 +6,7 @@ var magicmissle_scene = preload("res://spells/magicmissle.tscn")
 var lightning_scene = preload("res://spells/lightning.tscn")
 var earthaoe_scene = preload("res://spells/earthaoe.tscn")
 var ice_scene = preload("res://spells/ice.tscn")
-var stun_scene = preload("res://spells/stun.tscn")
+#var stun_scene = preload("res://spells/stun.tscn")
 
 
 func _on_player_ice(pos, direction):
@@ -42,9 +42,9 @@ func _on_player_lightning(pos, direction):
 	lightning.direction = direction
 	add_child(lightning)
 
-func _on_player_stun(pos, direction):
-	var stun = stun_scene.instantiate()
-	stun.position = pos
-	stun.rotation_degrees = rad_to_deg(direction.angle())+90
+#func _on_player_stun(pos, direction):
+	#var stun = stun_scene.instantiate()
+	#stun.position = pos
+	#stun.rotation_degrees = rad_to_deg(direction.angle())+90
 
-	add_child(stun)
+	#add_child(stun)
