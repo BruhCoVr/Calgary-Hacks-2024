@@ -3,6 +3,21 @@
 [ext_resource type="Script" path="res://characters/player.gd" id="1_pd75c"]
 [ext_resource type="Texture2D" uid="uid://dypf0n4pplkty" path="res://Sprites/main-character-Sheet.png" id="2_yb6oi"]
 
+[sub_resource type="Animation" id="Animation_alq8l"]
+resource_name = "idlw"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_mwrnf"]
 resource_name = "player walk"
 length = 0.45
@@ -20,21 +35,6 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 0]
 }
 
-[sub_resource type="Animation" id="Animation_alq8l"]
-resource_name = "idlw"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8qmya"]
 _data = {
 "idlw": SubResource("Animation_alq8l"),
@@ -48,7 +48,7 @@ radius = 41.0488
 script = ExtResource("1_pd75c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(13, 0)
+rotation = 1.5708
 texture = ExtResource("2_yb6oi")
 hframes = 8
 
@@ -58,7 +58,6 @@ libraries = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
-position = Vector2(13, 8)
 shape = SubResource("CircleShape2D_lalm1")
 
 [node name="lightningreload" type="Timer" parent="."]
@@ -83,7 +82,7 @@ one_shot = true
 [node name="reloadtimers" type="Node2D" parent="."]
 
 [node name="shooting" type="Marker2D" parent="."]
-position = Vector2(13, -30)
+position = Vector2(41, 0)
 
 [connection signal="timeout" from="lightningreload" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="icereload" to="." method="_on_timer_timeout"]

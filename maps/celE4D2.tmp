@@ -26,13 +26,6 @@ position = Vector2(463, 927)
 [node name="Player" parent="." instance=ExtResource("1_gc28x")]
 position = Vector2(100, 50)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-limit_left = -5
-limit_top = -15
-limit_right = 1800
-limit_bottom = 2480
-position_smoothing_enabled = true
-
 [node name="Node2D2" type="Node2D" parent="."]
 
 [node name="Background4" parent="Node2D2" instance=ExtResource("2_y6cgq")]
