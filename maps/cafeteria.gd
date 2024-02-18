@@ -32,7 +32,7 @@ func _on_player_fire(pos, direction):
 
 func _on_player_earth():
 	var earthaoe = earthaoe_scene.instantiate()
-	earthaoe.position = $Player.position
+	earthaoe.position = $Player2.position
 	add_child(earthaoe)
 
 func _on_player_lightning(pos, direction):

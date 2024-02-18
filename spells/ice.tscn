@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d07nvw3byehas"]
 
-[ext_resource type="Script" path="res://spells/ice.gd" id="1_f30ob"]
-[ext_resource type="Texture2D" uid="uid://dymchhhn7xfo8" path="res://Sprites/Sprite-iceattack.png" id="2_r2d87"]
+[ext_resource type="Script" path="res://spells/ice.gd" id="1_jcpts"]
+[ext_resource type="Texture2D" uid="uid://dymchhhn7xfo8" path="res://Sprites/Sprite-iceattack.png" id="2_6oxjl"]
 
 [sub_resource type="Animation" id="Animation_08xnc"]
 resource_name = "ice"
@@ -29,11 +29,11 @@ _data = {
 height = 72.0
 
 [node name="Ice" type="Area2D"]
-script = ExtResource("1_f30ob")
+script = ExtResource("1_jcpts")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
-texture = ExtResource("2_r2d87")
+texture = ExtResource("2_6oxjl")
 hframes = 3
 frame = 2
 
