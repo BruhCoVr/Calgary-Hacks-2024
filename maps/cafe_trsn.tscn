@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cue6tdaxc022g"]
+
+[sub_resource type="Gradient" id="Gradient_hpmun"]
+offsets = PackedFloat32Array(0.99115, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7sp1y"]
+gradient = SubResource("Gradient_hpmun")
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(454, 206)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(106, 241)
+scale = Vector2(5.39062, 947.938)
+texture = SubResource("GradientTexture1D_7sp1y")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = -439.0
+offset_top = 105.0
+offset_right = 678.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 30
+text = "You have gotten past the Cell Block now as you walk towards the cafeteria
+ but as you get there you feel like you cant use one of your abilities..."
