@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn7w1k8e83bvq"
-path="res://.godot/imported/Sprite-earthaoe.png-23a6e67c77c3873816d1223f40bdbfd5.ctex"
+uid="uid://ca7k0mdhsk8sh"
+path="res://.godot/imported/Sprite-lightning.png-97c9869344f3b1da41aeea182230f311.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Sprite-earthaoe.png"
-dest_files=["res://.godot/imported/Sprite-earthaoe.png-23a6e67c77c3873816d1223f40bdbfd5.ctex"]
+source_file="res://Sprites/Sprite-lightning.png"
+dest_files=["res://.godot/imported/Sprite-lightning.png-97c9869344f3b1da41aeea182230f311.ctex"]
 
 [params]
 

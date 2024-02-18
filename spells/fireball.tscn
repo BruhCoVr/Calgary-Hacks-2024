@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c51i6vrobg1am"]
+[gd_scene load_steps=6 format=3 uid="uid://c51i6vrobg1am"]
 
 [ext_resource type="Script" path="res://spells/fireball.gd" id="1_0mqaq"]
 [ext_resource type="Texture2D" uid="uid://c50j8ng4jdw6b" path="res://Sprites/fireball-Sheet.png" id="1_2vgkj"]
@@ -6,6 +6,7 @@
 [sub_resource type="Animation" id="Animation_bbipk"]
 resource_name = "fire"
 length = 0.3
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -24,10 +25,15 @@ _data = {
 "fire": SubResource("Animation_bbipk")
 }
 
-[node name="Fireball" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ty6oj"]
+radius = 15.0
+
+[node name="Fireball" type="Area2D"]
 script = ExtResource("1_0mqaq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, 11)
+rotation = -1.5708
 texture = ExtResource("1_2vgkj")
 hframes = 3
 frame = 2
@@ -36,3 +42,7 @@ frame = 2
 libraries = {
 "": SubResource("AnimationLibrary_63mcm")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 2)
+shape = SubResource("CircleShape2D_ty6oj")

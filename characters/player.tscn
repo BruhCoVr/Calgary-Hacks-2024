@@ -41,8 +41,8 @@ _data = {
 "player walk": SubResource("Animation_mwrnf")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jv1kb"]
-size = Vector2(100, 78)
+[sub_resource type="CircleShape2D" id="CircleShape2D_lalm1"]
+radius = 41.0488
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_pd75c")
@@ -59,19 +59,13 @@ libraries = {
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
 position = Vector2(13, 8)
-shape = SubResource("RectangleShape2D_jv1kb")
-
-[node name="icereload" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
+shape = SubResource("CircleShape2D_lalm1")
 
 [node name="lightningreload" type="Timer" parent="."]
 one_shot = true
 
-[node name="earthaoereload" type="Timer" parent="."]
-one_shot = true
-
-[node name="fireballreload" type="Timer" parent="."]
+[node name="icereload" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 
 [node name="magicmisslereload" type="Timer" parent="."]
@@ -80,9 +74,20 @@ one_shot = true
 [node name="stunreload" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="timeout" from="icereload" to="." method="_on_timer_timeout"]
+[node name="fireballreload" type="Timer" parent="."]
+one_shot = true
+
+[node name="earthaoereload" type="Timer" parent="."]
+one_shot = true
+
+[node name="reloadtimers" type="Node2D" parent="."]
+
+[node name="shooting" type="Marker2D" parent="."]
+position = Vector2(13, -30)
+
 [connection signal="timeout" from="lightningreload" to="." method="_on_timer_2_timeout"]
-[connection signal="timeout" from="earthaoereload" to="." method="_on_timer_3_timeout"]
-[connection signal="timeout" from="fireballreload" to="." method="_on_timer_4_timeout"]
+[connection signal="timeout" from="icereload" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="magicmisslereload" to="." method="_on_timer_5_timeout"]
 [connection signal="timeout" from="stunreload" to="." method="_on_timer_6_timeout"]
+[connection signal="timeout" from="fireballreload" to="." method="_on_timer_4_timeout"]
+[connection signal="timeout" from="earthaoereload" to="." method="_on_timer_3_timeout"]

@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce0cm75vf0qss"]
+[gd_scene load_steps=6 format=3 uid="uid://ce0cm75vf0qss"]
 
 [ext_resource type="Script" path="res://spells/earthaoe.gd" id="1_k3apg"]
-[ext_resource type="Texture2D" uid="uid://cdgxs4swlctm6" path="res://Sprites/Sprite-earthaoe.png" id="1_teh36"]
+[ext_resource type="Texture2D" uid="uid://dn7w1k8e83bvq" path="res://Sprites/Sprite-earthaoe.png" id="1_teh36"]
 
 [sub_resource type="Animation" id="Animation_e1mia"]
 resource_name = "earth"
 length = 0.2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -24,10 +25,15 @@ _data = {
 "earth": SubResource("Animation_e1mia")
 }
 
-[node name="Earthaoe" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4tmn"]
+size = Vector2(688.25, 690.75)
+
+[node name="Earthaoe" type="Area2D"]
 script = ExtResource("1_k3apg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_teh36")
 hframes = 2
 frame = 1
@@ -36,3 +42,8 @@ frame = 1
 libraries = {
 "": SubResource("AnimationLibrary_l8o1e")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9.125, 3.375)
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_c4tmn")

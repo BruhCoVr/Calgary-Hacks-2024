@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://d07nvw3byehas"]
+[gd_scene load_steps=6 format=3 uid="uid://d07nvw3byehas"]
 
 [ext_resource type="Script" path="res://spells/ice.gd" id="1_f30ob"]
-[ext_resource type="Texture2D" uid="uid://bm3jhspx8hqu5" path="res://Sprites/Sprite-iceattack.png" id="2_r2d87"]
+[ext_resource type="Texture2D" uid="uid://dqvwvsh4die2x" path="res://Sprites/Sprite-iceattack.png" id="2_r2d87"]
 
 [sub_resource type="Animation" id="Animation_08xnc"]
 resource_name = "ice"
 length = 0.3
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -24,10 +25,14 @@ _data = {
 "ice": SubResource("Animation_08xnc")
 }
 
-[node name="Ice" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hjgx5"]
+height = 72.0
+
+[node name="Ice" type="Area2D"]
 script = ExtResource("1_f30ob")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
 texture = ExtResource("2_r2d87")
 hframes = 3
 frame = 2
@@ -36,3 +41,7 @@ frame = 2
 libraries = {
 "": SubResource("AnimationLibrary_yk3wl")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_hjgx5")

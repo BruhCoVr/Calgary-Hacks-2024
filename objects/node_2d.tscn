@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmawy"]
 size = Vector2(20, 299)
 
-[node name="Node2D" type="StaticBody2D"]
+[node name="jailwall" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_1na7e")

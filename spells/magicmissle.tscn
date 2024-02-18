@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c17fclon3ouhi"]
+[gd_scene load_steps=6 format=3 uid="uid://c17fclon3ouhi"]
 
 [ext_resource type="Script" path="res://spells/magicmissle.gd" id="1_bvnuc"]
 [ext_resource type="Texture2D" uid="uid://dxygn357ete2x" path="res://Sprites/Sprite-magicmissle.png" id="2_06s6y"]
@@ -6,6 +6,7 @@
 [sub_resource type="Animation" id="Animation_soprh"]
 resource_name = "magic"
 length = 0.3
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -24,10 +25,14 @@ _data = {
 "magic": SubResource("Animation_soprh")
 }
 
-[node name="Magicmissle" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ive5j"]
+radius = 7.0
+
+[node name="Magicmissle" type="Area2D"]
 script = ExtResource("1_bvnuc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7, 11)
 texture = ExtResource("2_06s6y")
 hframes = 3
 frame = 2
@@ -36,3 +41,7 @@ frame = 2
 libraries = {
 "": SubResource("AnimationLibrary_848iv")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2)
+shape = SubResource("CapsuleShape2D_ive5j")

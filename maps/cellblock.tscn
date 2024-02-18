@@ -1,24 +1,72 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3gdo5e1ta603"]
+[gd_scene load_steps=8 format=3 uid="uid://c3gdo5e1ta603"]
 
 [ext_resource type="PackedScene" uid="uid://t5gsajylibsm" path="res://characters/player.tscn" id="1_gc28x"]
 [ext_resource type="Script" path="res://maps/cellblock.gd" id="1_r7rrj"]
 [ext_resource type="PackedScene" uid="uid://cykrg4tm6vk6f" path="res://objects/table.tscn" id="2_vybxd"]
+[ext_resource type="PackedScene" uid="uid://cyexjbmdsxh33" path="res://maps/background.tscn" id="2_y6cgq"]
+[ext_resource type="PackedScene" uid="uid://bw2b54hg37cpw" path="res://objects/node_2d.tscn" id="3_ixwq0"]
+[ext_resource type="PackedScene" uid="uid://dtffik1i666f" path="res://objects/door.tscn" id="4_3koly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ta4j4"]
-size = Vector2(1749.88, 2027.31)
+size = Vector2(506, 116)
 
 [node name="Cellblock" type="Area2D"]
 script = ExtResource("1_r7rrj")
 
+[node name="Node2D" parent="." instance=ExtResource("2_vybxd")]
+position = Vector2(738, 486)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(878, 1022)
+position = Vector2(-635, 735)
 shape = SubResource("RectangleShape2D_ta4j4")
 
-[node name="Player" parent="." instance=ExtResource("1_gc28x")]
-position = Vector2(45, -25)
-
 [node name="table" parent="." instance=ExtResource("2_vybxd")]
-position = Vector2(839, 919)
+position = Vector2(463, 927)
 
-[node name="Node2D" parent="." instance=ExtResource("2_vybxd")]
-position = Vector2(849, 353)
+[node name="Player" parent="." instance=ExtResource("1_gc28x")]
+position = Vector2(100, 50)
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="Background4" parent="Node2D2" instance=ExtResource("2_y6cgq")]
+position = Vector2(157, 390)
+scale = Vector2(5, 2)
+
+[node name="jailwall" parent="Node2D2/Background4" instance=ExtResource("3_ixwq0")]
+position = Vector2(26.6, -61)
+scale = Vector2(0.25, 0.5)
+
+[node name="Background5" parent="Node2D2" instance=ExtResource("2_y6cgq")]
+position = Vector2(157, 817)
+scale = Vector2(5, 2)
+
+[node name="jailwall" parent="Node2D2/Background5" instance=ExtResource("3_ixwq0")]
+position = Vector2(26.6, -61)
+scale = Vector2(0.25, 0.5)
+
+[node name="Door" parent="Node2D2" instance=ExtResource("4_3koly")]
+position = Vector2(791, 2439)
+rotation = -1.5708
+scale = Vector2(2, 3.75)
+
+[node name="Background2" parent="Node2D2" instance=ExtResource("2_y6cgq")]
+position = Vector2(-14, 1120)
+scale = Vector2(1, 100)
+
+[node name="Background2" parent="Node2D2/Background2" instance=ExtResource("2_y6cgq")]
+position = Vector2(1792, 0.0100001)
+
+[node name="Background" parent="Node2D2" instance=ExtResource("2_y6cgq")]
+position = Vector2(852, -32)
+scale = Vector2(30, 2)
+
+[node name="Background3" parent="Node2D2" instance=ExtResource("2_y6cgq")]
+position = Vector2(843, 2467)
+scale = Vector2(30, 2)
+
+[connection signal="earth" from="Player" to="." method="_on_player_earth"]
+[connection signal="fire" from="Player" to="." method="_on_player_fire"]
+[connection signal="ice" from="Player" to="." method="_on_player_ice"]
+[connection signal="lightning" from="Player" to="." method="_on_player_lightning"]
+[connection signal="magicmissle" from="Player" to="." method="_on_player_magicmissle"]
+[connection signal="stun" from="Player" to="." method="_on_player_stun"]

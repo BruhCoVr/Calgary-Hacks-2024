@@ -1,6 +1,11 @@
 extends CharacterBody2D
 @onready var animation = $Sprite2D/AnimationPlayer
-
+signal ice(pos)
+signal lightning(pos)
+signal earth
+signal fire(pos)
+signal magicmissle(pos)
+signal stun(pos)
 var can_spell1: bool = true
 var can_spell2: bool = true
 var can_spell3: bool = true
@@ -37,28 +42,34 @@ func _process(_delta):
 	
 	if Input.is_action_just_pressed("spell1")and can_spell1:
 		can_spell1 = false
-		print("spell one shot")
+		var shooting = $shooting
 		$icereload.start()
+		ice.emit(shooting.global_position)
 	if Input.is_action_just_pressed("spell2") and can_spell2:
 		can_spell2= false
-		print("spell one shot")
+		var shooting = $shooting
 		$lightningreload.start()
+		lightning.emit(shooting.global_position)
 	if Input.is_action_just_pressed("spell3") and can_spell3:
 		can_spell3 = false
 		print("spell one shot")
 		$earthaoereload.start()
+		earth.emit()
 	if Input.is_action_just_pressed("spell4")and can_spell4:
 		can_spell4 = false
-		print("spell one shot")
+		var shooting = $shooting
 		$stunreload.start()
+		stun.emit(shooting.global_position)
 	if Input.is_action_just_pressed("spell5")and can_spell5:
 		can_spell5 = false
-		print("spell one shot")
+		var shooting = $shooting
 		$magicmisslereload.start()
+		magicmissle.emit(shooting.global_position)
 	if Input.is_action_just_pressed("spell6")and can_spell6:
 		can_spell6 = false
-		print("spell one shot")
+		var shooting = $shooting
 		$fireballreload.start()
+		fire.emit(shooting.global_position)
 
 
 func _on_timer_timeout():
