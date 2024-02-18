@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var animation = $Sprite2D/AnimationPlayer
 
 var can_spell1: bool = true
 var can_spell2: bool = true
@@ -17,6 +18,22 @@ func _process(_delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * 500
 	move_and_slide()
+	
+	if Input.is_action_pressed("up"):
+		animation.play("player walk")
+		
+	if Input.is_action_pressed("down"):
+		animation.play("player walk")
+		
+	if Input.is_action_pressed("left"):
+		animation.play("player walk")
+		
+	if Input.is_action_pressed("right"):
+		animation.play("player walk")
+		
+	if Input.is_action_just_released("up"):
+		animation.play("idlw")
+	
 	
 	if Input.is_action_just_pressed("spell1")and can_spell1:
 		can_spell1 = false

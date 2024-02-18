@@ -1,19 +1,64 @@
-[gd_scene load_steps=4 format=3 uid="uid://t5gsajylibsm"]
+[gd_scene load_steps=7 format=3 uid="uid://t5gsajylibsm"]
 
 [ext_resource type="Script" path="res://characters/player.gd" id="1_pd75c"]
-[ext_resource type="Texture2D" uid="uid://fdilpqa0vesr" path="res://icon.svg" id="2_hll3f"]
+[ext_resource type="Texture2D" uid="uid://dypf0n4pplkty" path="res://Sprites/main-character-Sheet.png" id="2_yb6oi"]
+
+[sub_resource type="Animation" id="Animation_mwrnf"]
+resource_name = "player walk"
+length = 0.45
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 0]
+}
+
+[sub_resource type="Animation" id="Animation_alq8l"]
+resource_name = "idlw"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8qmya"]
+_data = {
+"idlw": SubResource("Animation_alq8l"),
+"player walk": SubResource("Animation_mwrnf")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jv1kb"]
-size = Vector2(125, 125)
+size = Vector2(100, 78)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_pd75c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_hll3f")
+position = Vector2(13, 0)
+texture = ExtResource("2_yb6oi")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_8qmya")
+}
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0.5)
+position = Vector2(13, 8)
 shape = SubResource("RectangleShape2D_jv1kb")
 
 [node name="icereload" type="Timer" parent="."]
