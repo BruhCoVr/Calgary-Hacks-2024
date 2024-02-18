@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5irxuvo3g60s"]
+
+[sub_resource type="Gradient" id="Gradient_uq6qu"]
+offsets = PackedFloat32Array(0.950495, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_038ql"]
+gradient = SubResource("Gradient_uq6qu")
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-20, 22)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(612, 401)
+scale = Vector2(20.125, 13.5313)
+texture = SubResource("GradientTexture2D_038ql")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 32.0
+offset_top = 248.0
+offset_right = 1208.0
+offset_bottom = 896.0
+theme_override_font_sizes/font_size = 35
+text = "After you pass the cafeteria you once again feel tired and can 
+no longer use one of your abilities, 
+the path to freedom is becoming tougher now."

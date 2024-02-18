@@ -46,7 +46,23 @@ position = Vector2(683, 1391)
 position = Vector2(919, 1903)
 
 [node name="guard_1" parent="." instance=ExtResource("4_whvid")]
-position = Vector2(1071, 304)
+position = Vector2(1062, 488)
+scale = Vector2(1.3, 1.3)
+
+[node name="guard_2" parent="." instance=ExtResource("4_whvid")]
+position = Vector2(981, 1619)
+scale = Vector2(1.3, 1.3)
+
+[node name="guard_3" parent="." instance=ExtResource("4_whvid")]
+position = Vector2(1092, 1188)
+scale = Vector2(1.3, 1.3)
+
+[node name="guard_4" parent="." instance=ExtResource("4_whvid")]
+position = Vector2(678, 945)
+scale = Vector2(1.3, 1.3)
+
+[node name="guard_5" parent="." instance=ExtResource("4_whvid")]
+position = Vector2(625, 1917)
 scale = Vector2(1.3, 1.3)
 
 [node name="Player" parent="." instance=ExtResource("1_gc28x")]
@@ -170,7 +186,7 @@ position = Vector2(843, 2467)
 scale = Vector2(30, 2)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(16, 0)
+position = Vector2(7, 2)
 navigation_polygon = SubResource("NavigationPolygon_lw42f")
 
 [connection signal="earth" from="Player" to="." method="_on_player_earth"]

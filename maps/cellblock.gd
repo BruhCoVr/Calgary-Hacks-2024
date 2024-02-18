@@ -48,3 +48,5 @@ func _on_player_lightning(pos, direction):
 	#stun.rotation_degrees = rad_to_deg(direction.angle())+90
 
 	#add_child(stun)
+
+
