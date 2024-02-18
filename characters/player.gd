@@ -12,58 +12,52 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	#input
 	var direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * 500
 	move_and_slide()
 	
-	if Input.is_action_just_pressed("spell1"):
+	if Input.is_action_just_pressed("spell1")and can_spell1:
 		can_spell1 = false
 		print("spell one shot")
-		$timer.start()
-	if Input.is_action_just_pressed("spell2"):
+		$icereload.start()
+	if Input.is_action_just_pressed("spell2") and can_spell2:
 		can_spell2= false
 		print("spell one shot")
-		$timer2.start()
-	if Input.is_action_just_pressed("spell3"):
+		$lightningreload.start()
+	if Input.is_action_just_pressed("spell3") and can_spell3:
 		can_spell3 = false
 		print("spell one shot")
-		$timer3.start()
-	if Input.is_action_just_pressed("spell4"):
+		$earthaoereload.start()
+	if Input.is_action_just_pressed("spell4")and can_spell4:
 		can_spell4 = false
 		print("spell one shot")
-		$timer4.start()
-	if Input.is_action_just_pressed("spell5"):
+		$stunreload.start()
+	if Input.is_action_just_pressed("spell5")and can_spell5:
 		can_spell5 = false
 		print("spell one shot")
-		$timer5.start()
-	if Input.is_action_just_pressed("spell6"):
+		$magicmisslereload.start()
+	if Input.is_action_just_pressed("spell6")and can_spell6:
 		can_spell6 = false
 		print("spell one shot")
-		$timer6.start()
+		$fireballreload.start()
 
 
 func _on_timer_timeout():
 	can_spell1 = true
 
-
-
 func _on_timer_2_timeout():
-	pass # Replace with function body.
-
+	can_spell2 = true
 
 func _on_timer_3_timeout():
-	pass # Replace with function body.
-
+	can_spell3 = true
 
 func _on_timer_4_timeout():
-	pass # Replace with function body.
-
+	can_spell4 = true
 
 func _on_timer_5_timeout():
-	pass # Replace with function body.
-
+	can_spell5 = true
 
 func _on_timer_6_timeout():
-	pass # Replace with function body.
+	can_spell6 = true
