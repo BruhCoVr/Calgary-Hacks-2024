@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://clavkaxcrmpxp"]
 
 [ext_resource type="Script" path="res://objects/guard.gd" id="1_iaurm"]
-[ext_resource type="Texture2D" uid="uid://c71chre3v1hgg" path="res://Sprites/Sprite-guard-Sheet.png" id="1_nom5v"]
+[ext_resource type="Texture2D" uid="uid://msb1wrenid8n" path="res://Sprites/Sprite-guard-Sheet.png" id="1_nom5v"]
 [ext_resource type="Script" path="res://objects/Area2D.gd" id="3_r3na6"]
 
 [sub_resource type="Animation" id="Animation_b6sdi"]
@@ -54,5 +54,7 @@ script = ExtResource("3_r3na6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, -50)
 shape = SubResource("RectangleShape2D_bfokg")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

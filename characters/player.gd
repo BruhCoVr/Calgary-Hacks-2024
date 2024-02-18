@@ -13,6 +13,7 @@ var can_spell4: bool = true
 var can_spell5: bool = true
 var can_spell6: bool = true
 var health = 3
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -25,7 +26,7 @@ func hitted():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	#input
-	
+	var global_position = global_position
 	var direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * 500
 	move_and_slide()
