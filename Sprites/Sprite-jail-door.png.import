@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://t4q3ndklsi3g"
+=======
+uid="uid://cyej1vy457hi3"
+>>>>>>> a86fa2aa0e51090b579d8741f64550822ac65123
 path="res://.godot/imported/Sprite-jail-door.png-478942a8d9ccf65513836fd0302ee4b2.ctex"
 metadata={
 "vram_texture": false

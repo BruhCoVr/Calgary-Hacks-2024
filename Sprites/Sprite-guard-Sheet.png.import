@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://ire5j8d3df3c"
+=======
+uid="uid://msb1wrenid8n"
+>>>>>>> a86fa2aa0e51090b579d8741f64550822ac65123
 path="res://.godot/imported/Sprite-guard-Sheet.png-17806bed02698b3603a4c21cf8b6f103.ctex"
 metadata={
 "vram_texture": false
