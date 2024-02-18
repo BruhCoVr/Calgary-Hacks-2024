@@ -10,12 +10,15 @@ size = Vector2(1749.88, 2027.31)
 [node name="Cellblock" type="Area2D"]
 script = ExtResource("1_r7rrj")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(878, 1022)
+shape = SubResource("RectangleShape2D_ta4j4")
+
 [node name="Player" parent="." instance=ExtResource("1_gc28x")]
 position = Vector2(45, -25)
 
 [node name="table" parent="." instance=ExtResource("2_vybxd")]
-position = Vector2(500, 500)
+position = Vector2(839, 919)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(867, -56.3438)
-shape = SubResource("RectangleShape2D_ta4j4")
+[node name="Node2D" parent="." instance=ExtResource("2_vybxd")]
+position = Vector2(849, 353)
