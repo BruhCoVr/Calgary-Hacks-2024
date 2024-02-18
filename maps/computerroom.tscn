@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://djhsel33jqgwf"]
+
+[ext_resource type="Script" path="res://maps/computerroom.gd" id="1_sgj7a"]
+[ext_resource type="PackedScene" uid="uid://t5gsajylibsm" path="res://characters/player.tscn" id="2_1ytn3"]
+[ext_resource type="Texture2D" uid="uid://61yq80rdujwc" path="res://Sprites/tile_1.png" id="2_mus1e"]
+[ext_resource type="PackedScene" uid="uid://cyexjbmdsxh33" path="res://maps/background.tscn" id="4_80y01"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlupn"]
+
+[node name="Computerroom" type="Area2D"]
+script = ExtResource("1_sgj7a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(841, 506)
+texture = ExtResource("2_mus1e")
+region_enabled = true
+region_rect = Rect2(-928, -517, 1919, 1079)
+
+[node name="Player" parent="." instance=ExtResource("2_1ytn3")]
+position = Vector2(89, 76)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 828
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-113, 57)
+shape = SubResource("RectangleShape2D_wlupn")
+
+[node name="Background" parent="." instance=ExtResource("4_80y01")]
+position = Vector2(558, 1)
+scale = Vector2(20, 1)
+
+[node name="Background4" parent="." instance=ExtResource("4_80y01")]
+position = Vector2(546, 850)
+scale = Vector2(20, 1)
+
+[node name="Background2" parent="." instance=ExtResource("4_80y01")]
+position = Vector2(-7, 556)
+rotation = 1.5708
+scale = Vector2(20, 1)
+
+[node name="Background3" parent="." instance=ExtResource("4_80y01")]
+position = Vector2(1163, 556)
+rotation = 1.5708
+scale = Vector2(20, 1)
