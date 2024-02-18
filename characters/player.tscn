@@ -82,7 +82,8 @@ one_shot = true
 [node name="reloadtimers" type="Node2D" parent="."]
 
 [node name="shooting" type="Marker2D" parent="."]
-position = Vector2(41, 0)
+position = Vector2(100, 0)
+scale = Vector2(inf, 0.5)
 
 [connection signal="timeout" from="lightningreload" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="icereload" to="." method="_on_timer_timeout"]

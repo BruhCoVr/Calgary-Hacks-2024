@@ -9,3 +9,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position += direction * speed * delta
+	
+
+
+
+func _on_body_entered(body):
+	queue_free()
