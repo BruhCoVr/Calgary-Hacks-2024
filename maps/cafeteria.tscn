@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://ekkfb36wpdlc"]
+
+[ext_resource type="Script" path="res://maps/cellblock.gd" id="1_almdm"]
+[ext_resource type="PackedScene" uid="uid://t5gsajylibsm" path="res://characters/player.tscn" id="1_nv5e4"]
+[ext_resource type="Texture2D" uid="uid://cg6amkyw6xgce" path="res://Sprites/Sprite-floor.png" id="2_owtke"]
+[ext_resource type="PackedScene" uid="uid://b01te41i4yyyf" path="res://objects/dining_table.tscn" id="2_taqxq"]
+[ext_resource type="PackedScene" uid="uid://bqrt76h7epauo" path="res://objects/cafeteria_table.tscn" id="3_5wfex"]
+
+[node name="cafeteria" type="Area2D"]
+script = ExtResource("1_almdm")
+metadata/_edit_horizontal_guides_ = [-866.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(1226, 1106)
+rotation = -1.5708
+scale = Vector2(0.626752, 0.971126)
+texture = ExtResource("2_owtke")
+region_enabled = true
+region_rect = Rect2(1466.54, -51.4202, 6065.47, 2723.43)
+
+[node name="Player" parent="." instance=ExtResource("1_nv5e4")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = -5
+limit_top = -15
+limit_right = 1800
+limit_bottom = 2480
+position_smoothing_enabled = true
+
+[node name="Table_1" parent="." instance=ExtResource("2_taqxq")]
+position = Vector2(635, 568)
+rotation = -3.14159
+scale = Vector2(2, 2)
+
+[node name="Table_3" parent="." instance=ExtResource("2_taqxq")]
+position = Vector2(1125, 1295)
+rotation = -3.14159
+scale = Vector2(2, 2)
+
+[node name="Table_4" parent="." instance=ExtResource("2_taqxq")]
+position = Vector2(1656, 563)
+rotation = -3.14159
+scale = Vector2(2, 2)
+
+[node name="Table_2" parent="." instance=ExtResource("2_taqxq")]
+position = Vector2(1116, 626)
+scale = Vector2(2, 2)
+
+[node name="Table_5" parent="." instance=ExtResource("2_taqxq")]
+position = Vector2(378, 1357)
+scale = Vector2(2, 2)
+
+[node name="Table_6" parent="." instance=ExtResource("2_taqxq")]
+position = Vector2(1642, 1336)
+scale = Vector2(2, 2)
+
+[node name="Node2D" parent="." instance=ExtResource("3_5wfex")]
+position = Vector2(1368, 2010)
+scale = Vector2(2, 2)
+
+[connection signal="earth" from="Player" to="." method="_on_player_earth"]
+[connection signal="fire" from="Player" to="." method="_on_player_fire"]
+[connection signal="ice" from="Player" to="." method="_on_player_ice"]
+[connection signal="lightning" from="Player" to="." method="_on_player_lightning"]
+[connection signal="magicmissle" from="Player" to="." method="_on_player_magicmissle"]
+[connection signal="stun" from="Player" to="." method="_on_player_stun"]

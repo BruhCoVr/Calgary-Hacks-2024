@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqrt76h7epauo"]
+
+[ext_resource type="Script" path="res://objects/table.gd" id="1_t8t7v"]
+[ext_resource type="Texture2D" uid="uid://corvm7srvvj37" path="res://Sprites/Sprite-lunch.png" id="2_0bj4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qa2ys"]
+size = Vector2(242.938, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61yf6"]
+size = Vector2(69, 57)
+
+[node name="Node2D" type="StaticBody2D"]
+script = ExtResource("1_t8t7v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(6, -109)
+scale = Vector2(1.88, 2.005)
+texture = ExtResource("2_0bj4x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-49.5313, 0.5)
+shape = SubResource("RectangleShape2D_qa2ys")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(159.5, 1.5)
+shape = SubResource("RectangleShape2D_61yf6")
